@@ -7,57 +7,119 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "Project 1 description",
+    title: "React Native Job Funda App",
+    description:
+      "A user-friendly app designed to simplify the job search process.Browse jobs across various industries and locations. Advanced filters for job type, location with a powerful search bar to find the perfect match quickly. View detailed job descriptions, qualifications, and about company.",
     image: "/images/projects/1.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    tag: ["All", "Mobile"],
+    gitUrl: "https://github.com/ZA-FrontendDev/Job-funda",
+    previewUrl:
+      "https://drive.google.com/file/d/17j75ICr_NhTnQ8gCFnU5jEMTbLAWXtmf/view?usp=sharing",
+    technologies: [
+      {
+        name: "React",
+        icon: "/images/react.png",
+        color: "bg-gray-500",
+      },
+      {
+        name: "JavaScript",
+        icon: "/images/JavaScript.png",
+        color: "bg-gray-500",
+      },
+      { name: "CSS", icon: "/images/css.png", color: "bg-gray-500" },
+    ],
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
-    description: "Project 2 description",
+    title: "React Native LMS App",
+    description:
+      "This LMS application is developed using React Native and is designed to simplify the educational experience for students and teachers.Integrated Jitsi Meet for seamless video conferencing and online classes, enabling real-time interaction between students and teachers.",
     image: "/images/projects/2.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 3,
-    title: "E-commerce Application",
-    description: "Project 3 description",
-    image: "/images/projects/3.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 4,
-    title: "Food Ordering Application",
-    description: "Project 4 description",
-    image: "/images/projects/4.png",
     tag: ["All", "Mobile"],
     gitUrl: "/",
     previewUrl: "/",
+    technologies: [
+      {
+        name: "React",
+        icon: "/images/react.png",
+        color: "bg-gray-500",
+      },
+      {
+        name: "JavaScript",
+        icon: "/images/JavaScript.png",
+        color: "bg-gray-500",
+      },
+      {
+        name: "TypeScript",
+        icon: "/images/typescript.png",
+        color: "bg-gray-500",
+      },
+      {
+        name: "CSS",
+        icon: "/images/css.png",
+        color: "bg-gray-500",
+      },
+    ],
   },
   {
-    id: 5,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
-    image: "/images/projects/5.png",
+    id: 3,
+    title: "React Car Showcase App",
+    description:
+      "A modern web application for exploring cars displays a wide range of cars fetched dynamically using APIs.Filter cars by make, model, year, and price to find your ideal vehicle.Explore car specifications, features, and images in detail.Its responsive web application using React , Next and Tailwind CSS.",
+    image: "/images/projects/3.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/ZA-FrontendDev/car-showcase",
+    previewUrl: "https://za-cars-showcase.vercel.app/",
+    technologies: [
+      {
+        name: "React",
+        icon: "/images/react.png",
+        color: "bg-gray-500",
+      },
+      {
+        name: "Next",
+        icon: "/images/nextjs.png",
+        color: "bg-gray-500",
+      },
+      {
+        name: "JavaScript",
+        icon: "/images/JavaScript.png",
+        color: "bg-gray-500",
+      },
+      {
+        name: "TypeScript",
+        icon: "/images/typescript.png",
+        color: "bg-gray-500",
+      },
+      {
+        name: "Tailwind",
+        icon: "/images/Tailwind.png",
+        color: "bg-gray-500",
+      },
+    ],
   },
   {
-    id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
+    id: 4,
+    title: "React Invoice Creator App",
+    description:
+      "A web application designed for creating and managing invoices efficiently.Generate professional invoices with customizable fields.View and manage a list of created invoices for easy tracking.Users stay logged in securely using local storage for session persistence.",
+    image: "/images/projects/4.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/ZA-FrontendDev/invoice-system",
+    previewUrl: "https://teknweb-invoice-system.vercel.app/",
+    technologies: [
+      {
+        name: "React",
+        icon: "/images/react.png",
+        color: "bg-gray-500",
+      },
+      {
+        name: "JavaScript",
+        icon: "/images/JavaScript.png",
+        color: "bg-gray-500",
+      },
+      { name: "CSS", icon: "/images/css.png", color: "bg-gray-500" },
+    ],
   },
 ];
 
@@ -81,7 +143,7 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects">
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+      <h2 className="text-center text-4xl font-bold bg-gradient-to-r from-pink-custom to-purple-custom bg-clip-text text-transparent mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
@@ -117,6 +179,7 @@ const ProjectsSection = () => {
               imgUrl={project.image}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
+              technologies={project.technologies}
             />
           </motion.li>
         ))}
