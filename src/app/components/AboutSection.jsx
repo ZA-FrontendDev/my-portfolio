@@ -4,20 +4,21 @@ import Image from "next/image";
 import TabButton from "./TabButton";
 
 const SKILLS_DATA = [
-  { name: "WordPress", category: "cms" },
-  { name: "Shopify", category: "ecommerce" },
+  { name: "React Js", category: "frontend" },
+  { name: "React Native", category: "mobile" },
   { name: "HTML", category: "frontend" },
   { name: "CSS", category: "frontend" },
   { name: "JavaScript", category: "frontend" },
-  { name: "Bootstrap", category: "frontend" },
-  { name: "UI/UX (Figma)", category: "design" },
-  { name: "React Js", category: "frontend" },
-  { name: "React Native", category: "mobile" },
   { name: "TypeScript", category: "frontend" },
   { name: "Tailwind CSS", category: "frontend" },
   { name: "Node Js", category: "backend" },
   { name: "MongoDB", category: "database" },
+  { name: "PostgreSql", category: "database" },
   { name: "Express js", category: "backend" },
+  { name: "WordPress", category: "cms" },
+  { name: "Shopify", category: "ecommerce" },
+  { name: "Bootstrap", category: "frontend" },
+  { name: "UI/UX (Figma)", category: "design" },
 ];
 
 const TAB_DATA = [
@@ -118,16 +119,26 @@ const AboutSection = () => {
             About Me
           </h2>
 
-          <p className="text-base lg:text-lg mb-8">
-            As a Frontend Developer, I specialize in creating responsive and
+          <p className="text-base lg:text-lg mb-6">
+            As a Frontend Developer, I specialize in building responsive and
             visually appealing user interfaces using modern frameworks like
             React and React Native, with a strong understanding of UI/UX design
-            principles to deliver intuitive user experiences. Additionally, I am
-            currently learning the MERN stack (MongoDB, Express, React, Node.js)
-            to enhance my skills in backend development and database management.
-            My commitment to continuous learning keeps me updated with the
-            latest frontend and backend technologies and trends, enabling me to
-            provide high-quality solutions.
+            principles to deliver intuitive and user-centered experiences. I
+            also have hands-on experience integrating RESTful APIs and
+            third-party services into frontend applications, ensuring seamless
+            data flow, real-time updates, and efficient state management.
+            Additionally, I have worked with Convex for backend integration,
+            implementing real-time data synchronization and structured backend
+            logic within modern web applications.
+          </p>
+
+          <p className="text-base lg:text-lg">
+            Alongside frontend development, I am currently expanding my
+            expertise in the MERN stack (MongoDB, Express, React, Node.js) to
+            strengthen my backend development and database management skills. My
+            commitment to continuous learning keeps me aligned with the latest
+            frontend and backend technologies, enabling me to design and deliver
+            scalable, high-quality full-stack solutions.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
