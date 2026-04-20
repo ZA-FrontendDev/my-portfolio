@@ -120,16 +120,12 @@ const AboutSection = () => {
           </h2>
 
           <p className="text-base lg:text-lg mb-6">
-            As a Frontend Developer, I specialize in building responsive and
-            visually appealing user interfaces using modern frameworks like
-            React and React Native, with a strong understanding of UI/UX design
-            principles to deliver intuitive and user-centered experiences. I
-            also have hands-on experience integrating RESTful APIs and
-            third-party services into frontend applications, ensuring seamless
-            data flow, real-time updates, and efficient state management.
-            Additionally, I have worked with Convex for backend integration,
-            implementing real-time data synchronization and structured backend
-            logic within modern web applications.
+            I’m a Frontend Developer specializing in building responsive and
+            visually engaging interfaces using React and React Native. I focus
+            on clean UI/UX and seamless integration of RESTful APIs and
+            third-party services for efficient data flow and real-time
+            functionality. I also have experience with Convex for real-time
+            backend integration.
           </p>
 
           <p className="text-base lg:text-lg">

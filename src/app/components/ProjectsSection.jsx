@@ -7,26 +7,23 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Native Ecommerce App",
+    title: "DiabMart Ecommerce App",
+    category: "E-COMMERCE & RETAIL", // <-- New
+    highlightText: "Complete scalable mobile shopping experience",
+    statusType: "live",
+    statusText: "Live on Play / App Stores",
     description:
-      "Developed a full-featured eCommerce mobile application using React Native, where I built the complete UI and integrated RESTful APIs for dynamic product listings, search functionality, cart management, order processing, and secure payment gateway integration. The app was structured with reusable components, optimized navigation, and efficient state management to deliver a smooth, scalable, and production-ready mobile shopping experience.",
+      "Developed a full-featured eCommerce mobile application using React Native, where I built the complete UI and integrated RESTful APIs for dynamic product listings...",
     image: "/images/projects/6.png",
     tag: ["All", "Mobile"],
     gitUrl: "https://github.com/ZA-FrontendDev",
     previewUrl:
       "https://drive.google.com/file/d/1nJCeZRse3yJcQN4kjFyHjQtqII9vQgEc/view?usp=sharing",
     technologies: [
-      {
-        name: "React",
-        icon: "/images/react.png",
-        color: "bg-gray-500",
-      },
-      {
-        name: "JavaScript",
-        icon: "/images/JavaScript.png",
-        color: "bg-gray-500",
-      },
-      { name: "CSS", icon: "/images/css.png", color: "bg-gray-500" },
+      { name: "React Native" }, // No icons needed anymore!
+      { name: "JavaScript" },
+      { name: "CSS" },
+      { name: "+1" }, // You can easily add a "+ number" badge like in the image
     ],
   },
   {
@@ -35,21 +32,14 @@ const projectsData = [
     description:
       "Developed an AI-powered calling platform for sales and customer support using React and TypeScript. I designed and implemented the complete frontend UI, including agent management dashboards, prompt configuration screens, and workflow interfaces for handling AI-driven conversations. The interface was built with a focus on clean architecture, reusable components, and responsive design to ensure scalability and a smooth user experience.",
     image: "/images/projects/5.png",
+    category: "AI Calling Platform",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/ZA-FrontendDev",
     previewUrl: "https://ava.q9labs.ai/",
     technologies: [
-      {
-        name: "React",
-        icon: "/images/react.png",
-        color: "bg-gray-500",
-      },
-      {
-        name: "JavaScript",
-        icon: "/images/JavaScript.png",
-        color: "bg-gray-500",
-      },
-      { name: "CSS", icon: "/images/css.png", color: "bg-gray-500" },
+      { name: "React" }, // No icons needed anymore!
+      { name: "JavaScript" },
+      { name: "Tailwind" },
     ],
   },
   {
@@ -65,46 +55,36 @@ const projectsData = [
     technologies: [
       {
         name: "React",
-        icon: "/images/react.png",
-        color: "bg-gray-500",
       },
       {
         name: "JavaScript",
-        icon: "/images/JavaScript.png",
-        color: "bg-gray-500",
       },
-      { name: "CSS", icon: "/images/css.png", color: "bg-gray-500" },
+      { name: "CSS" },
     ],
   },
   {
     id: 4,
-    title: "React Native LMS App",
+    title: "Tuition Highway LMS App",
     description:
       "This LMS application is developed using React Native and is designed to simplify the educational experience for students and teachers.Integrated Jitsi Meet for seamless video conferencing and online classes, enabling real-time interaction between students and teachers.",
     image: "/images/projects/2.png",
     tag: ["All", "Mobile"],
+    statusType: "live",
+    statusText: "Live on Play / App Stores",
     gitUrl: "/",
     previewUrl: "/",
     technologies: [
       {
         name: "React",
-        icon: "/images/react.png",
-        color: "bg-gray-500",
       },
       {
         name: "JavaScript",
-        icon: "/images/JavaScript.png",
-        color: "bg-gray-500",
       },
       {
         name: "TypeScript",
-        icon: "/images/typescript.png",
-        color: "bg-gray-500",
       },
       {
         name: "CSS",
-        icon: "/images/css.png",
-        color: "bg-gray-500",
       },
     ],
   },
@@ -120,28 +100,18 @@ const projectsData = [
     technologies: [
       {
         name: "React",
-        icon: "/images/react.png",
-        color: "bg-gray-500",
       },
       {
         name: "Next",
-        icon: "/images/nextjs.png",
-        color: "bg-gray-500",
       },
       {
         name: "JavaScript",
-        icon: "/images/JavaScript.png",
-        color: "bg-gray-500",
       },
       {
         name: "TypeScript",
-        icon: "/images/typescript.png",
-        color: "bg-gray-500",
       },
       {
         name: "Tailwind",
-        icon: "/images/Tailwind.png",
-        color: "bg-gray-500",
       },
     ],
   },
@@ -157,20 +127,14 @@ const projectsData = [
     technologies: [
       {
         name: "React",
-        icon: "/images/react.png",
-        color: "bg-gray-500",
       },
       {
         name: "JavaScript",
-        icon: "/images/JavaScript.png",
-        color: "bg-gray-500",
       },
       {
         name: "Nextjs",
-        icon: "/images/nextjs.png",
-        color: "bg-gray-500",
       },
-      { name: "Tailwind", icon: "/images/Tailwind.png", color: "bg-gray-500" },
+      { name: "Tailwind" },
     ],
   },
 ];
@@ -232,6 +196,10 @@ const ProjectsSection = () => {
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}
               technologies={project.technologies}
+              category={project.category} // Pass the category
+              highlightText={project.highlightText} // Pass the highlight text
+              statusType={project.statusType} // <--- Added
+              statusText={project.statusText}
             />
           </motion.li>
         ))}

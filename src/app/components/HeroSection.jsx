@@ -24,6 +24,8 @@ const HeroSection = () => {
               sequence={[
                 "Muhammad Zain Ahsan",
                 2000,
+                "Mobile App Developer",
+                1000,
                 "Frontend Developer",
                 1000,
                 "Freelancer",
