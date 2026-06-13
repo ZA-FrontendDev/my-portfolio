@@ -27,6 +27,25 @@ const projectsData = [
     ],
   },
   {
+    id: 1,
+    title: "React Native Recipe App",
+    category: "Recipe & Meal", // <-- New
+    highlightText: "Complete scalable mobile Recipe experience",
+    description:
+      "A full-stack recipe and meal planning application that allows users to discover, create, and manage delicious recipes with ease. Browse recipes by category, ingredients, cuisine, or dietary preferences, and save your favorite meals for quick access. Users can view detailed cooking instructions, ingredient lists, nutritional information, and recipe images. The application features a robust backend built with Node.js and PostgreSQL for secure data management and seamless API integration, while the React Native frontend delivers a smooth and responsive experience across mobile devices.",
+    image: "/images/projects/8.png",
+    tag: ["All", "Mobile"],
+    gitUrl: "https://github.com/ZA-FrontendDev/recipe-app",
+    previewUrl:
+      "https://drive.google.com/file/d/1xCePk4zjEnjAhfN6cj1Nkz3McD7luAtD/view?usp=sharing",
+    technologies: [
+      { name: "React Native" }, // No icons needed anymore!
+      { name: "JavaScript" },
+      { name: "Node js" },
+      { name: "PostgreSQL" }, // You can easily add a "+ number" badge like in the image
+    ],
+  },
+  {
     id: 2,
     title: "React Q9 labs AI Dashboard",
     description:
@@ -117,6 +136,30 @@ const projectsData = [
   },
   {
     id: 6,
+    title: "React Gym Fitness Website",
+    description:
+      "A modern fitness and gym web application designed to help users achieve their health and wellness goals. Explore professional training programs, workout plans, fitness classes, and expert coaching services. Discover gym facilities, membership packages, success stories, and fitness resources in one place. Built with a responsive and engaging user interface using React, and Tailwind CSS for a seamless experience across all devices.",
+    image: "/images/projects/7.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/ZA-FrontendDev/gym-fitness",
+    previewUrl: "https://gym-fitness-ashy.vercel.app/",
+    technologies: [
+      {
+        name: "React",
+      },
+      {
+        name: "JavaScript",
+      },
+      {
+        name: "TypeScript",
+      },
+      {
+        name: "Tailwind",
+      },
+    ],
+  },
+  {
+    id: 7,
     title: "Next JS Invoice Generator App",
     description:
       "A web application designed for creating and managing invoices efficiently.Generate professional invoices with customizable fields.View and manage a list of created invoices for easy tracking.Users stay logged in securely using local storage for session persistence.",
