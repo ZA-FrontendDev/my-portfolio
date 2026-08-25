@@ -7,10 +7,14 @@ const workExperiences = [
     position: "Frontend Developer",
     duration: "June 2023 - Present",
     description: [
-      "Currently gaining hands-on experience in backend development, working with MongoDB, Express, Node.js, and related technologies.",
-      "In This firm i m working on React & React Native creating web application or mobile application.",
-      "I am working in this company specifically on their (LMS), using React.js . I have worked on making some changes, including creating PDFs, code refactoring and implementing various functionalities.",
-      "Creating, Zoom-like mobile app with Jitsi Meet integration for seamless virtual classrooms in a powerful Learning Management System.",
+      "Develop cross-platform mobile and web applications using React.js and React Native",
+      "Build responsive, scalable UI and integrate RESTful APIs, managing state, authentication, and data flow",
+      "Developed frontend applications for multiple production-level projects independently, while collaborating with backend developers on API integration, including:",
+      "LMS Platforms: EmanTime (Quran learning) & Tuition Highway (student tuition platform)",
+      "School Management System (Convex-based): Worked on dashboards, attendance, and API integrations",
+      "Diabmart (E-commerce App): Implemented product flows, UI components, and order-related features",
+      "AI Calling Platform: Developed React.js frontend for sales and customer support automation",
+      "Implemented real-time features using Jitsi Meet for virtual classrooms (Zoom-like experience)",
     ],
   },
   {
@@ -18,7 +22,10 @@ const workExperiences = [
     position: "Mid-Level WordPress Developer",
     duration: "Apr 2022 - May 2023",
     description: [
-      "Design the website and after approval from clients also developed the website.",
+      "Designed and developed responsive websites using WordPress based on client requirements",
+      "Improved website performance, responsiveness, and UI/UX.",
+      "Collaborated directly with clients to gather requirements and ensure project delivery aligned with expectations.",
+      "Customized themes and plugins to deliver tailored business solutions.",
     ],
   },
   {
@@ -26,8 +33,9 @@ const workExperiences = [
     position: "WordPress Developer",
     duration: "Dec 2020 - Dec 2021",
     description: [
-      "Design the website and after approval from clients also developed the website.",
-      "When i was in this company i also go to client side with my team lead.",
+      "Designed and developed websites from scratch using WordPress.",
+      "Translated client requirements into functional and visually appealing websites.",
+      "Worked closely with team lead and participated in client meetings for requirement gathering and project updates.",
     ],
   },
 ];
