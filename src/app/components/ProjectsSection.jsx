@@ -2,13 +2,13 @@
 import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 
 const projectsData = [
   {
     id: 1,
     title: "DiabMart Ecommerce App",
-    category: "E-COMMERCE & RETAIL", // <-- New
+    category: "E-COMMERCE & RETAIL",
     highlightText: "Complete scalable mobile shopping experience",
     statusType: "live",
     statusText: "Live on Play / App Stores",
@@ -20,16 +20,16 @@ const projectsData = [
     previewUrl:
       "https://drive.google.com/file/d/1nJCeZRse3yJcQN4kjFyHjQtqII9vQgEc/view?usp=sharing",
     technologies: [
-      { name: "React Native" }, // No icons needed anymore!
+      { name: "React Native" },
       { name: "JavaScript" },
       { name: "CSS" },
-      { name: "+1" }, // You can easily add a "+ number" badge like in the image
+      { name: "+1" },
     ],
   },
   {
     id: 1,
     title: "React Native Recipe App",
-    category: "Recipe & Meal", // <-- New
+    category: "Recipe & Meal",
     highlightText: "Complete scalable mobile Recipe experience",
     description:
       "A full-stack recipe and meal planning application that allows users to discover, create, and manage delicious recipes with ease. Browse recipes by category, ingredients, cuisine, or dietary preferences, and save your favorite meals for quick access. Users can view detailed cooking instructions, ingredient lists, nutritional information, and recipe images. The application features a robust backend built with Node.js and PostgreSQL for secure data management and seamless API integration, while the React Native frontend delivers a smooth and responsive experience across mobile devices.",
@@ -39,10 +39,10 @@ const projectsData = [
     previewUrl:
       "https://drive.google.com/file/d/1xCePk4zjEnjAhfN6cj1Nkz3McD7luAtD/view?usp=sharing",
     technologies: [
-      { name: "React Native" }, // No icons needed anymore!
+      { name: "React Native" },
       { name: "JavaScript" },
       { name: "Node js" },
-      { name: "PostgreSQL" }, // You can easily add a "+ number" badge like in the image
+      { name: "PostgreSQL" },
     ],
   },
   {
@@ -56,7 +56,7 @@ const projectsData = [
     gitUrl: "https://github.com/ZA-FrontendDev",
     previewUrl: "https://ava.q9labs.ai/",
     technologies: [
-      { name: "React" }, // No icons needed anymore!
+      { name: "React" },
       { name: "JavaScript" },
       { name: "Tailwind" },
     ],
@@ -185,7 +185,9 @@ const projectsData = [
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const headerRef = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const headerInView = useInView(headerRef, { once: true, margin: "-80px" });
 
   const handleTagChange = (newTag) => {
     setTag(newTag);
@@ -195,57 +197,84 @@ const ProjectsSection = () => {
     project.tag.includes(tag),
   );
 
-  const cardVariants = {
-    initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-  };
-
   return (
-    <section id="projects">
-      <h2 className="text-center text-4xl font-bold bg-gradient-to-r from-pink-custom to-purple-custom bg-clip-text text-transparent mt-4 mb-8 md:mb-12">
-        My Projects
-      </h2>
-      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
-        <ProjectTag
-          onClick={handleTagChange}
-          name="All"
-          isSelected={tag === "All"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
-        />
-      </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {filteredProjects.map((project, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.3, delay: index * 0.4 }}
-          >
-            <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
-              technologies={project.technologies}
-              category={project.category} // Pass the category
-              highlightText={project.highlightText} // Pass the highlight text
-              statusType={project.statusType} // <--- Added
-              statusText={project.statusText}
-            />
-          </motion.li>
-        ))}
+    <section id="projects" className="py-20 md:py-28">
+      <motion.div
+        ref={headerRef}
+        initial={{ opacity: 0, y: 30 }}
+        animate={headerInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        className="flex items-center gap-3 mb-10"
+      >
+        <span className="text-pink-custom font-mono text-sm">03.</span>
+        <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-custom to-purple-custom">
+          My Projects
+        </h2>
+        <span className="flex-1 h-px bg-gradient-to-r from-purple-custom/40 to-transparent ml-2" />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={headerInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.15 }}
+        className="flex flex-row justify-center items-center gap-2 py-6 mb-10"
+      >
+        <div className="inline-flex p-1 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-md">
+          <ProjectTag
+            onClick={handleTagChange}
+            name="All"
+            isSelected={tag === "All"}
+          />
+          <ProjectTag
+            onClick={handleTagChange}
+            name="Web"
+            isSelected={tag === "Web"}
+          />
+          <ProjectTag
+            onClick={handleTagChange}
+            name="Mobile"
+            isSelected={tag === "Mobile"}
+          />
+        </div>
+      </motion.div>
+
+      <ul
+        ref={ref}
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+      >
+        <AnimatePresence mode="popLayout">
+          {filteredProjects.map((project, index) => (
+            <motion.li
+              key={`${project.title}-${tag}`}
+              layout
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={
+                isInView
+                  ? { opacity: 1, y: 0, scale: 1 }
+                  : { opacity: 0, y: 50, scale: 0.95 }
+              }
+              exit={{ opacity: 0, y: -20, scale: 0.95 }}
+              transition={{
+                duration: 0.5,
+                delay: isInView ? index * 0.08 : 0,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                imgUrl={project.image}
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
+                technologies={project.technologies}
+                category={project.category}
+                highlightText={project.highlightText}
+                statusType={project.statusType}
+                statusText={project.statusText}
+              />
+            </motion.li>
+          ))}
+        </AnimatePresence>
       </ul>
     </section>
   );

@@ -8,10 +8,10 @@ import Experience from "./components/Experience";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#121212]">
+    <main className="flex min-h-screen flex-col bg-[#0a0a0f] overflow-hidden">
       <Navbar />
-      <div className="container mt-24 mx-auto px-12 py-4">
-        <HeroSection />
+      <HeroSection />
+      <div className="container mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 py-4 w-full">
         <AboutSection />
         <Experience />
         <ProjectsSection />
